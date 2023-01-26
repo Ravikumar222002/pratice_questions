@@ -12,7 +12,7 @@ public class MoveNegativeNumber {
 
         int [] a = {-12, 11, -13, -5, 6, -7, 5, -3, -6};
         System.out.println(Arrays.toString(a));
-        check2(a);
+        check3(a);
         System.out.println(Arrays.toString(a));
     }
 
@@ -34,6 +34,26 @@ public class MoveNegativeNumber {
             }
         }
 
+    }
+
+    static void check3(int [] a){
+
+        int s = 0;
+        int e = a.length-1;
+
+        while(s<e){
+            if(a[s] < 0 && a[e] < 0){  // both pointer point to -ve
+                s++;
+            } else if(a[s] > 0 && a[e] > 0){ // both pointer point to +ve
+                e--;
+            } else if(a[s] > 0 && a[e] < 0) {    // when only end are -ve
+                int t = a[e];
+                a[e] = a[s];
+                a[s]=t;
+                s++;e--;
+            }
+            else{ s++; e--;}
+        }
     }
 
 }
