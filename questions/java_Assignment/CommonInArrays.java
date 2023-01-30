@@ -9,8 +9,8 @@ public class CommonInArrays {
 
     public static void main(String[] args) {
 
-        int a[] = {2,4,6,3,7};
-        int b[] = {1,3,2,6,9,7};
+        int[] a = {2,4,6,3,7};
+        int[] b = {1,3,2,6,9,7};
 
         check2(a,b);
     }
